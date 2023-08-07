@@ -11,7 +11,10 @@ class EntradaCheckbox extends StatefulWidget {
 
 class _EntradaCheckboxState extends State<EntradaCheckbox> {
 
-  bool? _estaSelecionado = false;
+  //bool? _estaSelecionado = false;
+  bool? _comidaBrasileira = false;
+  bool? _comidaMexicana = false;
+
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +27,7 @@ class _EntradaCheckboxState extends State<EntradaCheckbox> {
       ),
       body: Column(
         children: [
-          Text('Comida brasileira'),
+          /*Text('Comida brasileira'),
           Checkbox(
             value: _estaSelecionado, 
             onChanged: (bool? valor){
@@ -32,19 +35,38 @@ class _EntradaCheckboxState extends State<EntradaCheckbox> {
               setState(() {
                 _estaSelecionado = valor;
               });
-            }),
+            }),*/
             CheckboxListTile(
               title: Text('Comida Brasileira'),
               subtitle: Text('A melhor comida do mundo!'),
               activeColor: Colors.red ,
               selected: false ,
-              secondary: Icon(Icons.add),
-              value: _estaSelecionado, 
+              //secondary: Icon(Icons.add_box),
+              value: _comidaBrasileira, 
               onChanged: (bool? valor){
                 setState(() {
-                  _estaSelecionado = valor;
+                  _comidaBrasileira = valor;
                 });
               }),
+            CheckboxListTile(
+              title: Text('Comida Mexicana'),
+              subtitle: Text('A melhor comida do mundo!'),
+              activeColor: Colors.red ,
+              selected: false ,
+              //secondary: Icon(Icons.add_box),
+              value: _comidaMexicana, 
+              onChanged: (bool? valor){
+                setState(() {
+                  _comidaMexicana = valor;
+                });
+              }),
+              ElevatedButton(
+                onPressed: (){
+                  print('Comida Brasileira: $_comidaBrasileira');
+                  print('Comida Mexicana: $_comidaMexicana');
+                  },
+                child: Text('Salvar')
+              )
         ],
       ),
     );
