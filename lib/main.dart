@@ -1,7 +1,8 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'EntradaRadioButton.dart';
+//import 'EntradaRadioButton.dart';
+import 'EntradaSwitch.dart';
 //import 'CampoTexto.dart';
 //import 'EntradaCheckbox.dart';
 
@@ -10,6 +11,7 @@ main(){
   runApp(MaterialApp(
     //home: CampoTexto(),
     //home: EntradaCheckbox()
-    home: EntradaRadioButton()
+    //home: EntradaRadioButton()
+    home: EntradaSwitch()
   ));
 }
